@@ -63,6 +63,9 @@ public class LittleBlackBooked {
     }
 
     public static void main(String[] args) {
+        System.out.println("Contact: rpgbyter@gmail.com");
+        System.out.println("GitHub: https://github.com/Byterleek");
+        System.out.println();
         try {
             LittleBlackBooked book = new LittleBlackBooked("Jeffrey_Epstein39s_Little_Black_Book_unredacted_djvu.txt");
             List<String> results = book.search("John", "example@email.com", "1234567890");

@@ -71,6 +71,9 @@ class LittleBlackBooked {
 }
 
 // Example usage
+console.log("Contact: rpgbyter@gmail.com");
+console.log("GitHub: https://github.com/Byterleek");
+console.log();
 // const book = new LittleBlackBooked('Jeffrey_Epstein39s_Little_Black_Book_unredacted_djvu.txt');
 // book.search('John', 'example@email.com', '1234567890')
 //   .then(results => console.log(results))

@@ -1,5 +1,7 @@
 #!/bin/bash
 # Shell script version of littleBlackBooked
+# Contact: rpgbyter@gmail.com
+# GitHub: https://github.com/Byterleek
 
 # Check if Python is installed
 if ! command -v python3 &> /dev/null

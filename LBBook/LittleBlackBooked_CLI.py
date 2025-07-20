@@ -1,7 +1,7 @@
 import re
 def search_book(name='', email='', phone='', output_format='text'):
     try:
-        with open('Jeffrey_Epstein39s_Little_Black_Book_unredacted_djvu.txt', 'r', encoding='utf-8') as f:
+        with open('/Users/amre/Coding/LBBook/LBBook/Jeffrey_Epstein39s_Little_Black_Book_unredacted_djvu.txt', 'r', encoding='utf-8') as f:
             content = f.read()
             
         results = []
