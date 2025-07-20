@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Epstein's Black Book Search</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        #searchBox { margin-bottom: 10px; }
+        #results { white-space: pre-wrap; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Epstein's Black Book Search</h1>
+    <p>Contact: <a href="mailto:rpgbyter@gmail.com">rpgbyter@gmail.com</a> | GitHub: <a href="https://github.com/Byterleek" target="_blank">Repository</a></p>
+    
+    <div id="searchBox">
+        <input type="text" id="searchInput" placeholder="Enter search term">
+        <button onclick="search()">Search</button>
+    </div>
+    
+    <div id="results">Enter a search term to find matches</div>
+
+    <script>
+        function search() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const resultsDiv = document.getElementById('results');
+            
+            if (!searchTerm) {
+                resultsDiv.textContent = 'Please enter a search term';
+                return;
+            }
+            
+            fetch('http://localhost:8000/Jeffrey_Epstein39s_Little_Black_Book_unredacted_djvu.txt')
+                .then(response => response.text())
+                .then(data => {
+                    const lines = data.split('\n');
+                    let foundResults = [];
+                    
+                    lines.forEach(line => {
+                        if (line.toLowerCase().includes(searchTerm)) {
+                            foundResults.push(line);
+                        }
+                    });
+                    
+                    if (foundResults.length > 0) {
+                        resultsDiv.textContent = `Found ${foundResults.length} matches:\n\n${foundResults.join('\n\n')}`;
+                    } else {
+                        resultsDiv.textContent = 'No matches found';
+                    }
+                })
+                .catch(error => {
+                    resultsDiv.innerHTML = 'Error loading file: ' + error + '<br><br>Try the working version at: <a href="http://localhost:8000/LBBook/SimpleSearch.html" target="_blank">http://localhost:8000/LBBook/SimpleSearch.html</a>';
+                });
+        }
+    </script>
+</body>
+</html>
